@@ -1,0 +1,52 @@
+<?php
+
+namespace CascadeEnergy\DistributedOperations;
+
+class Operation implements OperationInterface
+{
+    const STATE_NEW = 'new';
+    const STATE_COMPLETE = 'complete';
+
+    const DISPOSITION_FAILED = 'failed';
+    const DISPOSITION_NONE = 'none';
+    const DISPOSITION_SUCCEEDED = 'succeeded';
+    const DISPOSITION_UNKNOWN = 'unknown';
+
+    /** @var string */
+    private $disposition = self::DISPOSITION_NONE;
+
+    /** @var string */
+    private $state = self::STATE_NEW;
+
+    /** @var string */
+    private $type;
+
+    /** @var array */
+    private $options = [];
+
+    public function __construct($type, $options)
+    {
+        $this->type = $type;
+        $this->options = $options;
+    }
+
+    public function getDisposition()
+    {
+        return $this->disposition;
+    }
+
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    public function getType()
+    {
+        return $this->type;
+    }
+}
