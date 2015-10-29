@@ -1,6 +1,6 @@
 <?php
 
-namespace CascadeEnergy\DistributedOperations;
+namespace CascadeEnergy\DistributedOperations\Utility;
 
 interface WaiterInterface
 {
