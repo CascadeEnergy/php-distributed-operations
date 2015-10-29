@@ -5,5 +5,5 @@ namespace CascadeEnergy\DistributedOperations\Utility;
 interface WaiterInterface
 {
     public function waitForBatch($batchId);
-    public function isBatchDone($batchId);
+    public function getBatchItemsRemaining($batchId);
 }
