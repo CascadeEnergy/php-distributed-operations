@@ -21,14 +21,17 @@ class Operation implements OperationInterface
     /** @var string */
     private $id;
 
+    /** @var array */
+    private $options = [];
+
     /** @var string */
     private $state = self::STATE_NEW;
 
+    /** @var array */
+    private $storageAttributes = [];
+
     /** @var string */
     private $type;
-
-    /** @var array */
-    private $options = [];
 
     public function __construct($type, $batchId, $options)
     {
@@ -94,6 +97,20 @@ class Operation implements OperationInterface
     public function setState($state)
     {
         $this->state = $state;
+    }
+
+    public function getStorageAttribute($name)
+    {
+        if (!array_key_exists($name, $this->storageAttributes)) {
+            return null;
+        }
+
+        return $this->storageAttributes[$name];
+    }
+
+    public function setStorageAttribute($name, $value)
+    {
+        $this->storageAttributes[$name] = $value;
     }
 
     public function getType()

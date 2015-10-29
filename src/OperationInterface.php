@@ -20,6 +20,9 @@ interface OperationInterface
     public function getState();
     public function setState($state);
 
+    public function getStorageAttribute($name);
+    public function setStorageAttribute($name, $value);
+
     public function getType();
     public function setType($type);
 }
