@@ -4,6 +4,9 @@ namespace CascadeEnergy\DistributedOperations;
 
 interface OperationInterface
 {
+    public function getBatchId();
+    public function setBatchId($batchId);
+    
     public function getDisposition();
     public function setDisposition($disposition);
 

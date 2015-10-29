@@ -13,6 +13,9 @@ class Operation implements OperationInterface
     const DISPOSITION_UNKNOWN = 'unknown';
 
     /** @var string */
+    private $batchId;
+
+    /** @var string */
     private $disposition = self::DISPOSITION_NONE;
 
     /** @var string */
@@ -24,10 +27,21 @@ class Operation implements OperationInterface
     /** @var array */
     private $options = [];
 
-    public function __construct($type, $options)
+    public function __construct($type, $batchId, $options)
     {
         $this->type = $type;
+        $this->batchId = $batchId;
         $this->options = $options;
+    }
+
+    public function getBatchId()
+    {
+        return $this->batchId;
+    }
+
+    public function setBatchId($batchId)
+    {
+        $this->batchId = $batchId;
     }
 
     public function getDisposition()
