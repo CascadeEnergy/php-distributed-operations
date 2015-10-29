@@ -10,6 +10,9 @@ interface OperationInterface
     public function getDisposition();
     public function setDisposition($disposition);
 
+    public function getId();
+    public function setId($id);
+
     public function getOptions();
     public function setOptions(array $options);
 
