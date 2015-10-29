@@ -2,7 +2,7 @@
 
 namespace CascadeEnergy\DistributedOperations\Utility;
 
-interface ProviderInterface extends \IteratorAggregate
+interface ProviderInterface
 {
     public function setType($type);
 }
