@@ -72,6 +72,15 @@ class Operation implements OperationInterface
         return $this->options;
     }
 
+    public function getOption($name)
+    {
+        if (!array_key_exists($name, $this->options)) {
+            return null;
+        }
+
+        return $this->options[$name];
+    }
+
     public function setOptions(array $options)
     {
         $this->options = $options;

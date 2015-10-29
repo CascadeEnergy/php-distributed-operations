@@ -14,6 +14,7 @@ interface OperationInterface
     public function setId($id);
 
     public function getOptions();
+    public function getOption($name);
     public function setOptions(array $options);
 
     public function getState();
