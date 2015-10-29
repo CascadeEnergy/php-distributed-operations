@@ -35,9 +35,19 @@ class Operation implements OperationInterface
         return $this->disposition;
     }
 
+    public function setDisposition($disposition)
+    {
+        $this->disposition = $disposition;
+    }
+
     public function getOptions()
     {
         return $this->options;
+    }
+
+    public function setOptions(array $options)
+    {
+        $this->options = $options;
     }
 
     public function getState()
@@ -45,8 +55,18 @@ class Operation implements OperationInterface
         return $this->state;
     }
 
+    public function setState($state)
+    {
+        $this->state = $state;
+    }
+
     public function getType()
     {
         return $this->type;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
     }
 }

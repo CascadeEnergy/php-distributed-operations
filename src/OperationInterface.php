@@ -5,7 +5,14 @@ namespace CascadeEnergy\DistributedOperations;
 interface OperationInterface
 {
     public function getDisposition();
+    public function setDisposition($disposition);
+
     public function getOptions();
+    public function setOptions(array $options);
+
     public function getState();
+    public function setState($state);
+
     public function getType();
+    public function setType($type);
 }
