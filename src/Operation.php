@@ -22,6 +22,9 @@ class Operation implements OperationInterface
     private $id;
 
     /** @var array */
+    private $metadata = [];
+
+    /** @var array */
     private $options = [];
 
     /** @var string */
@@ -68,6 +71,20 @@ class Operation implements OperationInterface
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    public function getMetadata($name)
+    {
+        if (!array_key_exists($name, $this->metadata)) {
+            return null;
+        }
+
+        return $this->metadata[$name];
+    }
+
+    public function setMetadata($name, $value)
+    {
+        $this->metadata[$name] = $value;
     }
 
     public function getOptions()
