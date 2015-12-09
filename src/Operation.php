@@ -16,6 +16,9 @@ class Operation implements OperationInterface
     private $batchId;
 
     /** @var string */
+    private $channel;
+
+    /** @var string */
     private $disposition = self::DISPOSITION_NONE;
 
     /** @var string */
@@ -53,6 +56,22 @@ class Operation implements OperationInterface
         $this->batchId = $batchId;
     }
 
+    /**
+     * @return string
+     */
+    public function getChannel()
+    {
+        return $this->channel;
+    }
+
+    /**
+     * @param string $channel
+     */
+    public function setChannel($channel)
+    {
+        $this->channel = $channel;
+    }
+
     public function getDisposition()
     {
         return $this->disposition;
@@ -87,11 +106,6 @@ class Operation implements OperationInterface
         $this->metadata[$name] = $value;
     }
 
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
     public function getOption($name)
     {
         if (!array_key_exists($name, $this->options)) {
@@ -99,6 +113,16 @@ class Operation implements OperationInterface
         }
 
         return $this->options[$name];
+    }
+
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    public function setOption($name, $value)
+    {
+        $this->options[$name] = $value;
     }
 
     public function setOptions(array $options)

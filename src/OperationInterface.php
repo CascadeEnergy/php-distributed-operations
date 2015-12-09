@@ -6,6 +6,9 @@ interface OperationInterface
 {
     public function getBatchId();
     public function setBatchId($batchId);
+
+    public function getChannel();
+    public function setChannel($channel);
     
     public function getDisposition();
     public function setDisposition($disposition);
@@ -13,8 +16,9 @@ interface OperationInterface
     public function getId();
     public function setId($id);
 
-    public function getOptions();
     public function getOption($name);
+    public function getOptions();
+    public function setOption($name, $value);
     public function setOptions(array $options);
 
     public function getState();

@@ -4,6 +4,8 @@ namespace CascadeEnergy\DistributedOperations\Utility;
 
 interface ProviderInterface
 {
+    public function setChannel($channel);
+
     public function setType($type);
 
     /**
