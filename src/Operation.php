@@ -152,6 +152,10 @@ class Operation implements OperationInterface
         $this->preconditions[$condition] = $value;
     }
 
+    public function setPreconditions(array $preconditions)
+    {
+        $this->preconditions = $preconditions;
+    }
 
     public function getState()
     {

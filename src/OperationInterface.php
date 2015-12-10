@@ -24,6 +24,7 @@ interface OperationInterface
     public function getPrecondition($condition);
     public function getPreconditions();
     public function setPrecondition($condition, $value);
+    public function setPreconditions(array $preconditions);
 
     public function getState();
     public function setState($state);
