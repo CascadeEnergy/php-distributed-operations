@@ -21,6 +21,10 @@ interface OperationInterface
     public function setOption($name, $value);
     public function setOptions(array $options);
 
+    public function getPrecondition($condition);
+    public function getPreconditions();
+    public function setPrecondition($condition, $value);
+
     public function getState();
     public function setState($state);
 

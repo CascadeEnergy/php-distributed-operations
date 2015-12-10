@@ -30,6 +30,9 @@ class Operation implements OperationInterface
     /** @var array */
     private $options = [];
 
+    /** @var array */
+    private $preconditions = [];
+
     /** @var string */
     private $state = self::STATE_NEW;
 
@@ -129,6 +132,26 @@ class Operation implements OperationInterface
     {
         $this->options = $options;
     }
+
+    public function getPrecondition($condition)
+    {
+        if (!array_key_exists($condition, $this->preconditions)) {
+            return null;
+        }
+
+        return $this->preconditions[$condition];
+    }
+
+    public function getPreconditions()
+    {
+        return $this->preconditions;
+    }
+
+    public function setPrecondition($condition, $value)
+    {
+        $this->preconditions[$condition] = $value;
+    }
+
 
     public function getState()
     {
