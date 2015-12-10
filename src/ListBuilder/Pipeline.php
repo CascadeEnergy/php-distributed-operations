@@ -12,12 +12,12 @@ class Pipeline implements OperationListBuilderInterface
         $this->operationListBuilderList[] = $operationListBuilder;
     }
 
-    public function buildOperationList($batchId, array $options = null)
+    public function buildOperationList($batchId, array $options = [], array $preconditions = [])
     {
         $operationList = [];
 
         foreach ($this->operationListBuilderList as $operationListBuilder) {
-            $operationList += $operationListBuilder->buildOperationList($batchId, $options);
+            $operationList += $operationListBuilder->buildOperationList($batchId, $options, $preconditions);
         }
 
         return $operationList;
