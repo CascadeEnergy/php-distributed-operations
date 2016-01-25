@@ -92,6 +92,14 @@ class Operation implements OperationInterface
         return $this->createdTimestamp;
     }
 
+    /**
+     * @param $timestamp
+     */
+    public function setCreatedTimestamp($timestamp)
+    {
+        $this->createdTimestamp = $timestamp;
+    }
+
     public function getDisposition()
     {
         return $this->disposition;
@@ -135,11 +143,11 @@ class Operation implements OperationInterface
     }
 
     /**
-     * @param \DateTime $timestamp
+     * @param string $timestamp
      */
-    public function setModifiedTimestamp(\DateTime $timestamp)
+    public function setModifiedTimestamp($timestamp)
     {
-        $this->modifiedTimestamp = $timestamp->format('c');
+        $this->modifiedTimestamp = $timestamp;
     }
 
     public function getOption($name)

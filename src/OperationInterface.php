@@ -11,6 +11,7 @@ interface OperationInterface
     public function setChannel($channel);
 
     public function getCreatedTimestamp();
+    public function setCreatedTimestamp($timestamp);
 
     public function getDisposition();
     public function setDisposition($disposition);
@@ -19,7 +20,7 @@ interface OperationInterface
     public function setId($id);
 
     public function getModifiedTimestamp();
-    public function setModifiedTimestamp(\DateTime $timestamp);
+    public function setModifiedTimestamp($timestamp);
 
     public function getOption($name);
     public function getOptions();
