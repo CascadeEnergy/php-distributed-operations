@@ -16,6 +16,9 @@ class Operation implements OperationInterface
     private $batchId;
 
     /** @var string */
+    private $createdTimestamp;
+
+    /** @var string */
     private $channel;
 
     /** @var string */
@@ -26,6 +29,9 @@ class Operation implements OperationInterface
 
     /** @var array */
     private $metadata = [];
+
+    /** @var string */
+    private $modifiedTimestamp;
 
     /** @var array */
     private $options = [];
@@ -47,6 +53,9 @@ class Operation implements OperationInterface
         $this->type = $type;
         $this->batchId = $batchId;
         $this->options = $options;
+
+        $now = new \Datetime();
+        $this->createdTimestamp = $now->format('c');
     }
 
     public function getBatchId()
@@ -73,6 +82,14 @@ class Operation implements OperationInterface
     public function setChannel($channel)
     {
         $this->channel = $channel;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedTimestamp()
+    {
+        return $this->createdTimestamp;
     }
 
     public function getDisposition()
@@ -107,6 +124,22 @@ class Operation implements OperationInterface
     public function setMetadata($name, $value)
     {
         $this->metadata[$name] = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getModifiedTimestamp()
+    {
+        return $this->modifiedTimestamp;
+    }
+
+    /**
+     * @param \DateTime $timestamp
+     */
+    public function setModifiedTimestamp(\DateTime $timestamp)
+    {
+        $this->modifiedTimestamp = $timestamp->format('c');
     }
 
     public function getOption($name)
