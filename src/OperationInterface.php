@@ -16,6 +16,9 @@ interface OperationInterface
     public function getDisposition();
     public function setDisposition($disposition);
 
+    public function getFamilyId();
+    public function setFamilyId($familyId);
+
     public function getId();
     public function setId($id);
 

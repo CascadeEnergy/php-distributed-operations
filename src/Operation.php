@@ -25,6 +25,9 @@ class Operation implements OperationInterface
     private $disposition = self::DISPOSITION_NONE;
 
     /** @var string */
+    private $familyId;
+
+    /** @var string */
     private $id;
 
     /** @var array */
@@ -108,6 +111,16 @@ class Operation implements OperationInterface
     public function setDisposition($disposition)
     {
         $this->disposition = $disposition;
+    }
+
+    public function getFamilyId()
+    {
+        return $this->familyId;
+    }
+
+    public function setFamilyId($familyId)
+    {
+        $this->familyId = $familyId;
     }
 
     public function getId()
