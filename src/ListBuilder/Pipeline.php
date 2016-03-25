@@ -4,6 +4,9 @@ namespace CascadeEnergy\DistributedOperations\ListBuilder;
 
 class Pipeline implements OperationListBuilderInterface
 {
+    /** @var string */
+    private $familyId;
+
     /** @var OperationListBuilderInterface[] */
     private $operationListBuilderList = [];
 
@@ -21,5 +24,10 @@ class Pipeline implements OperationListBuilderInterface
         }
 
         return $operationList;
+    }
+
+    public function setFamilyId($familyId)
+    {
+        $this->familyId = $familyId;
     }
 }
